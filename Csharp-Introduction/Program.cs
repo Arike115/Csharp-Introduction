@@ -1,31 +1,15 @@
-﻿//linq in c#
-//language integrated query
-//Types of Operators
-//filtering
-//projecting
-//ordering
-//setoperators
-//elementoperators
+﻿//Quantifier Operators
+///any,all, contain
+///
 
-using Csharp_Introduction;
+var numbers = new List<int> { 5, 10, 15, 20, 25, 30 };
 
-QueryFunctions.OrderingMethod();
-//List<int> intlist = new List<int>()
-//{
-//    1,3,4,6,7,8, 9,10,1,2,5,15,18
+var result = numbers.Any(x => x > 2.5);
+Console.WriteLine(result);
 
-//};
+var value = numbers.All(x => x%2 == 0); 
+Console.WriteLine(value);
 
-////Query syntax
-//var querysyntax = from obj in  intlist
-//                  where obj > 5
-//                  select obj;
-
-////method syntax
-//var methodsyntax = intlist.Where (obj => obj > 5);
-
-//foreach(var method in methodsyntax)
-//{
-//    Console.WriteLine(method + " ");
-//}
+var values = numbers.Contains(20);
+Console.WriteLine(values);
 Console.ReadKey();

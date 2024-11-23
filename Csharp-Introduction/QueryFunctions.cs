@@ -8,28 +8,22 @@ namespace Csharp_Introduction
 {
     internal class QueryFunctions
     {
-        //ordering operators
-        public static void OrderingMethod()
-        {
-            List<int> intlist = new List<int>() { 10,45,30, 28,107,76,63,98};
-            Console.WriteLine("before sorting");
-            foreach(int i in intlist)
-            {
-                Console.WriteLine(i + " ");
-            }
-            
-            //method syntax
-            var data = intlist.Where(x => x > 30).OrderByDescending(x => x).ToList();
 
-            //query syntax
-            var datas = (from x in intlist
-                         where x > 30
-                         orderby x 
-                         select x).ToList();
-            Console.WriteLine("**********************");
-            Console.WriteLine("after sorting .............");
-            foreach(int i in datas)
-                Console.WriteLine(i + " ");
-        }
     }
+    public class Customer 
+    { 
+        public int? Id { get; set; } 
+        public string? Name { get; set; }
+
+    }
+    public class Order
+    { 
+        public string? OrderName { get; set; }
+        public int? OrderId { get; set; }
+        public int? CustomerId { get; set; }
+
+
+    }
+
+
 }
